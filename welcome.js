@@ -1,0 +1,20 @@
+(function(){'use strict';
+const lines=[
+ ['재루','나는 재두루미 재루야.'],
+ ['담이','나는 각시붕어인 담이라고 해!'],
+ ['재루','우리 같이 낙동강을 함께 탐험해 볼래?'],
+ ['담이','탐험 전에 낙동강에 대해 자세히 알 필요가 있어.'],
+ ['재루','먼저 왼쪽 버튼을 눌러 낙동강 이해력 높이기를 꼼꼼히 볼 필요가 있어.'],
+ ['담이','잘 모르거나 자세한 설명이 필요하면 항상 나를 찾으면 좋아.'],
+ ['재루','그럼 진짜 시작해 볼까?']
+];
+let timer=null,swap=null,index=0,paused=false;const reduce=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;
+function render(){return '<section class="welcome-stage" aria-labelledby="welcomeTitle"><h1 id="welcomeTitle" class="sr-only">재루, 담이와 함께하는 낙동강 생태 탐험</h1><div class="mascot-scene"><img class="welcome-pair" src="mascots-welcome.webp" alt="왼쪽의 재두루미 재루와 오른쪽의 각시붕어 담이"><div id="welcomeSpeech" class="welcome-speech"><small>재루</small><p>나는 재두루미 재루야.</p></div><span class="scene-caption">재두루미 재루 · 각시붕어 담이</span></div><aside class="welcome-conversation" aria-label="재루와 담이의 대화"><div class="conversation-head"><span>재루 · 담이</span><button data-welcome="pause" id="welcomePause">대화 멈춤</button></div><div id="welcomeChat" class="welcome-chat" tabindex="0" aria-label="대화 기록. 위아래로 스크롤해서 다시 읽을 수 있어요."></div><div class="conversation-actions"><button data-welcome="next" id="welcomeNext">다음 말 →</button><button data-open-menu class="primary">왼쪽 메뉴 열기</button></div></aside></section><a class="main-board-link" href="board.html"><span>낙동강 생태 탐험 메인 보드</span><span aria-hidden="true">→</span></a>'}
+function stop(){clearTimeout(timer);clearTimeout(swap);timer=swap=null}
+function addLine(i,scroll=true){const log=document.getElementById('welcomeChat');if(!log)return;const [speaker,text]=lines[i],row=document.createElement('article');row.className='conversation-line '+(speaker==='담이'?'dami':'jaeru');const label=document.createElement('strong'),p=document.createElement('p');label.textContent=speaker;p.textContent=text;row.append(label,p);log.append(row);if(scroll)log.scrollTo({top:log.scrollHeight,behavior:reduce()?'instant':'smooth'})}
+function show(i,animate=true){const speech=document.getElementById('welcomeSpeech');if(!speech)return;const next=document.getElementById('welcomeNext');next.disabled=true;const apply=()=>{next.disabled=false;speech.querySelector('small').textContent=lines[i][0];speech.querySelector('p').textContent=lines[i][1];speech.className='welcome-speech '+(lines[i][0]==='담이'?'is-dami':'is-jaeru');addLine(i);if(i===lines.length-1){document.getElementById('welcomeNext').textContent='대화 다시 보기';document.getElementById('welcomePause').disabled=true;document.getElementById('welcomePause').textContent='대화 완료'}};if(animate&&!reduce()){speech.classList.add('is-changing');swap=setTimeout(apply,180)}else apply()}
+function schedule(){clearTimeout(timer);if(paused||reduce()||index===lines.length-1)return;timer=setTimeout(()=>{const stage=document.querySelector('.welcome-stage');if(!stage)return;if(document.hidden||document.querySelector('dialog[open]')||stage.getBoundingClientRect().bottom<0){schedule();return}index++;show(index);schedule()},Math.max(4400,Math.min(6800,lines[index][1].length*120)))}
+function start(){stop();index=0;paused=false;const pause=document.getElementById('welcomePause'),next=document.getElementById('welcomeNext');if(pause){pause.disabled=false;pause.textContent='대화 멈춤'}if(next){next.hidden=false;next.disabled=false;next.textContent='다음 말 →'}const log=document.getElementById('welcomeChat');if(!log)return;log.replaceChildren();if(reduce()){lines.forEach((_,i)=>addLine(i,false));document.getElementById('welcomePause').disabled=true;document.getElementById('welcomePause').textContent='대화 전체 보기';document.getElementById('welcomeNext').hidden=true;return}show(0,false);schedule()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-welcome]');if(!b||b.disabled)return;if(b.dataset.welcome==='pause'){paused=!paused;b.textContent=paused?'대화 계속':'대화 멈춤';paused?clearTimeout(timer):schedule();return}clearTimeout(timer);clearTimeout(swap);if(index===lines.length-1){start();return}index++;show(index);schedule()});
+window.RiverWelcome={render,start,stop};
+})();
