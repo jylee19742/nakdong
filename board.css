@@ -14,3 +14,8 @@ body{background:radial-gradient(ellipse at 10% 10%,#d7f3e9,transparent 45%),radi
  #boardContent .board-image{width:min(100%,calc(100svh - 150px));max-width:none}
  .board-note{font-size:10px;line-height:1.5;margin:5px 0 0;text-align:center}
 }
+
+body.board-full{padding-top:0;padding-bottom:0!important;overflow:auto}.board-full .board-top-fold,.board-full .board-page-heading,.board-full .board-progress,.board-full .board-note{display:none}
+.board-full #boardMain{margin:0;padding:0;max-width:none;width:100%}.board-full #boardContent{padding:0;border:0;border-radius:0;box-shadow:none;background:transparent;min-height:100svh;display:flex;align-items:center;justify-content:center}
+.board-full #boardContent .board-image{width:min(calc(100vw - 48px),100svh);max-width:none;margin:auto;touch-action:pan-x pan-y pinch-zoom}
+.board-full-home{position:fixed;right:8px;top:8px;z-index:20;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#f1fffae8;border:1px solid #b9dcd4;color:#225b63}

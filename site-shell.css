@@ -22,3 +22,11 @@ body.with-explore-menu{padding-left:44px;padding-bottom:32px}.home-link{text-dec
 @media(max-width:1000px) and (max-height:600px){
  #mapBody .board-image,#groupMapBody .board-image{width:min(100%,calc(100svh - 170px));margin:auto}
 }
+
+/* Floating nonmodal navigation: the background remains usable. */
+.explore-drawer,.explore-drawer:not(:modal){inset:70px auto auto 48px;margin:0;width:28vw;max-width:280px;height:38dvh;max-height:38dvh;min-width:0;padding:10px;border-radius:16px;z-index:45;box-shadow:0 9px 30px #174f592b;backdrop-filter:blur(14px);animation:none}
+.explore-drawer::backdrop{background:transparent;backdrop-filter:none}
+.drawer-head{gap:5px;margin-bottom:7px}.drawer-head h2{font-size:13px;line-height:1.5}.drawer-head .drawer-pin{font-size:10px;padding:5px 8px;min-height:30px}.drawer-head button[data-close-drawer]{font-size:19px;min-width:30px;min-height:30px}
+.explore-drawer nav{gap:8px}.explore-drawer section{gap:4px}.explore-drawer h3{font-size:10px;padding-left:4px}
+.explore-drawer a,.drawer-lessons a,.explore-drawer .drawer-board{font-size:11px;line-height:1.5;min-height:32px;padding:6px 7px;border-radius:8px;overflow-wrap:anywhere}
+.drawer-lessons{padding-left:6px;margin-left:3px;gap:3px}.explore-drawer small{font-size:9px}
