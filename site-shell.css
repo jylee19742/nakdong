@@ -30,3 +30,18 @@ body.with-explore-menu{padding-left:44px;padding-bottom:32px}.home-link{text-dec
 .explore-drawer nav{gap:8px}.explore-drawer section{gap:4px}.explore-drawer h3{font-size:10px;padding-left:4px}
 .explore-drawer a,.drawer-lessons a,.explore-drawer .drawer-board{font-size:11px;line-height:1.5;min-height:32px;padding:6px 7px;border-radius:8px;overflow-wrap:anywhere}
 .drawer-lessons{padding-left:6px;margin-left:3px;gap:3px}.explore-drawer small{font-size:9px}
+
+/* Final compact menu: all choices visible, no backdrop blur or orientation gate. */
+.explore-drawer,.explore-drawer:not(:modal){inset:65px auto auto 46px;width:28vw;max-width:280px;height:auto;max-height:40dvh;padding:7px;border-radius:12px;overflow:visible;background:#f2fcf9;backdrop-filter:none;-webkit-backdrop-filter:none}
+.explore-drawer .drawer-head{position:absolute;right:4px;top:3px;margin:0;display:block}
+.explore-drawer .drawer-head h2{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.explore-drawer .drawer-head button[data-close-drawer]{min-width:20px;width:20px;min-height:20px;height:20px;font-size:15px;border:0;background:transparent;border-radius:5px}
+.explore-drawer nav{display:grid;grid-template-columns:1fr;gap:5px}
+.explore-drawer section{gap:3px;min-width:0}.explore-drawer .drawer-course{padding-right:19px}
+.explore-drawer a,.explore-drawer .drawer-lessons a{font-size:clamp(9px,1.45vw,12px);line-height:1.2;min-height:22px;padding:4px 4px;border-radius:5px;gap:2px;white-space:normal}
+.explore-drawer h3{font-size:clamp(9px,1.45vw,12px);line-height:1.2;margin:0;padding:2px 20px 2px 4px}
+.explore-drawer .drawer-lessons{padding-left:4px;margin-left:1px;gap:2px}
+.explore-drawer small{font-size:8px;line-height:1.1}
+@media(orientation:landscape){.explore-drawer nav{grid-template-columns:1.05fr 1fr;gap:6px}.explore-drawer a,.explore-drawer .drawer-lessons a{min-height:18px;padding:3px 4px;font-size:clamp(9px,1.3vw,12px)}.explore-drawer .drawer-course{padding-right:4px}.explore-drawer section{align-content:start;gap:2px}}
+
+@media(orientation:portrait){.explore-drawer a,.explore-drawer .drawer-lessons a{min-height:20px;padding:3px 4px}.explore-drawer nav{gap:4px}.explore-drawer section{gap:2px}}
