@@ -3,3 +3,5 @@ body.with-explore-menu{padding-left:44px;padding-bottom:32px}.home-link{text-dec
 @media(prefers-reduced-motion:reduce){.explore-drawer[open]{animation:none}}
 /* Keep help in the reserved left rail so it never covers story text or game buttons. */
 .dami-help{left:0;right:auto;top:calc(43% + 126px);bottom:auto;flex-direction:column;width:44px;min-height:70px;gap:3px;padding:7px 3px;border-left:0;border-radius:0 17px 17px 0}.dami-help img{width:32px;height:32px}.dami-help span{font-size:10px}
+
+.drawer-head{flex-wrap:wrap;gap:8px}.drawer-head h2{flex:1 0 100%}.drawer-head .drawer-pin{font-size:14px;padding:9px 15px;min-height:44px;width:auto}.drawer-pin[aria-pressed="true"]{background:#ccebe1;border-color:#67ab98}.explore-drawer:not(:modal){z-index:40}
