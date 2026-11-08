@@ -4,44 +4,20 @@ body.with-explore-menu{padding-left:44px;padding-bottom:32px}.home-link{text-dec
 /* Keep help in the reserved left rail so it never covers story text or game buttons. */
 .dami-help{left:0;right:auto;top:calc(43% + 126px);bottom:auto;flex-direction:column;width:44px;min-height:70px;gap:3px;padding:7px 3px;border-left:0;border-radius:0 17px 17px 0}.dami-help img{width:32px;height:32px}.dami-help span{font-size:10px}
 
-.drawer-head{flex-wrap:wrap;gap:8px}.drawer-head h2{flex:1 0 100%}.drawer-head .drawer-pin{font-size:14px;padding:9px 15px;min-height:44px;width:auto}.drawer-pin[aria-pressed="true"]{background:#ccebe1;border-color:#67ab98}.explore-drawer:not(:modal){z-index:40}
 
-.landscape-gate{position:fixed;inset:0;margin:auto;box-sizing:border-box;width:100vw;max-width:none;height:100dvh;max-height:none;border:0;border-radius:0;padding:28px;background:linear-gradient(145deg,#effbf7,#dceef9);color:#174f58;text-align:center;overflow:auto}.landscape-gate::backdrop{background:#effbf7}.landscape-gate[open]{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}.landscape-gate h2{font-size:25px;line-height:1.5;margin:0}.landscape-gate p{font-size:16px;line-height:1.8;margin:0;max-width:460px}.landscape-gate button{min-height:48px;padding:12px 24px;background:#d1eee4;color:#174f58}.rotate-device{font-size:70px;line-height:1.4;color:#398f87}#rotateStatus{font-size:14px;color:#466c75}
-
-@media(max-width:1000px){
- .explore-drawer{width:min(290px,82vw);padding:14px 13px;border-radius:0 20px 20px 0}
- .drawer-head{margin-bottom:12px}.drawer-head h2{font-size:18px}
- .drawer-head .drawer-pin{font-size:12px;padding:7px 11px}
- .explore-drawer nav{gap:12px}.explore-drawer section{gap:5px}
- .explore-drawer h3{font-size:11px;margin-bottom:0}
- .explore-drawer a,.drawer-lessons a{font-size:13px;min-height:44px;padding:8px 10px;border-radius:10px}
- .explore-drawer .drawer-board{font-size:13px}
- .drawer-lessons{gap:4px;padding-left:10px;margin-left:7px}
- .explore-drawer small{font-size:10px}
-}
-@media(max-width:1000px) and (max-height:600px){
- #mapBody .board-image,#groupMapBody .board-image{width:min(100%,calc(100svh - 170px));margin:auto}
-}
-
-/* Floating nonmodal navigation: the background remains usable. */
-.explore-drawer,.explore-drawer:not(:modal){inset:70px auto auto 48px;margin:0;width:28vw;max-width:280px;height:38dvh;max-height:38dvh;min-width:0;padding:10px;border-radius:16px;z-index:45;box-shadow:0 9px 30px #174f592b;backdrop-filter:blur(14px);animation:none}
-.explore-drawer::backdrop{background:transparent;backdrop-filter:none}
-.drawer-head{gap:5px;margin-bottom:7px}.drawer-head h2{font-size:13px;line-height:1.5}.drawer-head .drawer-pin{font-size:10px;padding:5px 8px;min-height:30px}.drawer-head button[data-close-drawer]{font-size:19px;min-width:30px;min-height:30px}
-.explore-drawer nav{gap:8px}.explore-drawer section{gap:4px}.explore-drawer h3{font-size:10px;padding-left:4px}
-.explore-drawer a,.drawer-lessons a,.explore-drawer .drawer-board{font-size:11px;line-height:1.5;min-height:32px;padding:6px 7px;border-radius:8px;overflow-wrap:anywhere}
-.drawer-lessons{padding-left:6px;margin-left:3px;gap:3px}.explore-drawer small{font-size:9px}
-
-/* Final compact menu: all choices visible, no backdrop blur or orientation gate. */
-.explore-drawer,.explore-drawer:not(:modal){inset:65px auto auto 46px;width:28vw;max-width:280px;height:auto;max-height:40dvh;padding:7px;border-radius:12px;overflow:visible;background:#f2fcf9;backdrop-filter:none;-webkit-backdrop-filter:none}
-.explore-drawer .drawer-head{position:absolute;right:4px;top:3px;margin:0;display:block}
-.explore-drawer .drawer-head h2{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
-.explore-drawer .drawer-head button[data-close-drawer]{min-width:20px;width:20px;min-height:20px;height:20px;font-size:15px;border:0;background:transparent;border-radius:5px}
-.explore-drawer nav{display:grid;grid-template-columns:1fr;gap:5px}
-.explore-drawer section{gap:3px;min-width:0}.explore-drawer .drawer-course{padding-right:19px}
-.explore-drawer a,.explore-drawer .drawer-lessons a{font-size:clamp(9px,1.45vw,12px);line-height:1.2;min-height:22px;padding:4px 4px;border-radius:5px;gap:2px;white-space:normal}
-.explore-drawer h3{font-size:clamp(9px,1.45vw,12px);line-height:1.2;margin:0;padding:2px 20px 2px 4px}
-.explore-drawer .drawer-lessons{padding-left:4px;margin-left:1px;gap:2px}
-.explore-drawer small{font-size:8px;line-height:1.1}
-@media(orientation:landscape){.explore-drawer nav{grid-template-columns:1.05fr 1fr;gap:6px}.explore-drawer a,.explore-drawer .drawer-lessons a{min-height:18px;padding:3px 4px;font-size:clamp(9px,1.3vw,12px)}.explore-drawer .drawer-course{padding-right:4px}.explore-drawer section{align-content:start;gap:2px}}
-
-@media(orientation:portrait){.explore-drawer a,.explore-drawer .drawer-lessons a{min-height:20px;padding:3px 4px}.explore-drawer nav{gap:4px}.explore-drawer section{gap:2px}}
+/* Docked nonmodal menu: attached to the viewport edge, with readable touch targets. */
+.explore-drawer,.explore-drawer:not(:modal){box-sizing:border-box;position:fixed;inset:auto auto auto 0;left:0;top:50%;margin:0;transform:translateY(-50%);width:clamp(232px,24vw,280px);max-width:calc(100vw - 24px);height:auto;max-height:calc(100dvh - 24px);padding:14px;border:1px solid #beded6;border-left:0;border-radius:0 20px 20px 0;background:#f3fcf9fa;box-shadow:10px 6px 30px #174f5928;z-index:45;overflow:auto;overscroll-behavior:contain;animation:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.explore-drawer::backdrop{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.explore-menu-open .drawer-trigger,.drawer-trigger[hidden]{display:none!important}
+.explore-drawer .drawer-head{display:flex;position:static;align-items:center;justify-content:space-between;gap:8px;margin:0 0 10px;flex-wrap:nowrap}
+.explore-drawer .drawer-head h2{font-size:16px;line-height:1.4;margin:0}
+.explore-drawer .drawer-head button[data-close-drawer]{width:44px;min-width:44px;height:44px;min-height:44px;font-size:25px;padding:0;border-radius:12px;background:#ffffffb8;border:1px solid #c3dfd7;box-shadow:none}
+.explore-drawer nav{display:grid;grid-template-columns:1fr;gap:14px}
+.explore-drawer section{display:grid;gap:8px;min-width:0}
+.explore-drawer a,.explore-drawer .drawer-lessons a{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;padding:9px 10px;font-size:14px;line-height:1.35;border-radius:10px;white-space:normal;overflow-wrap:normal}
+.explore-drawer .drawer-course{min-height:44px;font-size:15px;background:#d9f0ed}
+.explore-drawer .drawer-lessons{display:grid;gap:8px;padding-left:9px;margin-left:4px;border-left:2px solid #b3d9cc}
+.explore-drawer h3{font-size:13px;line-height:1.3;margin:0;padding:0 4px;color:#47746d}
+.explore-drawer small{font-size:11px;white-space:nowrap;color:#54726d}
+@media(max-width:600px){.explore-drawer,.explore-drawer:not(:modal){width:min(260px,76vw);padding:12px;border-radius:0 18px 18px 0}.explore-drawer a,.explore-drawer .drawer-lessons a{min-height:44px}}
+@media(max-height:540px) and (orientation:landscape){.explore-drawer,.explore-drawer:not(:modal){width:min(470px,85vw);padding:10px 14px}.explore-drawer nav{grid-template-columns:1fr 1fr;gap:14px}.explore-drawer a,.explore-drawer .drawer-lessons a{min-height:36px;padding:7px 9px}.explore-drawer .drawer-head{margin-bottom:5px}.explore-drawer .drawer-lessons{gap:6px}}
