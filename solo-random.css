@@ -1,0 +1,7 @@
+/* Actual category counts remain readable on portrait phones. */
+#app>.play-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;min-width:0}
+#app>.play-top>.progress-label{grid-column:1;grid-row:1}
+#app>.play-top>.text-button{grid-column:2;grid-row:1;min-width:0;font-size:12px;padding:8px 10px}
+#app>.play-top>.chapter-progress{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;gap:5px;min-width:0}
+#app>.play-top .chapter-progress>span{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;min-width:0;padding:7px 3px;font-size:11px;line-height:1.4}
+#app>.play-top .chapter-progress>span>b{display:block!important;white-space:nowrap;font-size:11px}
