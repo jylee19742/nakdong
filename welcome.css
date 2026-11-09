@@ -41,11 +41,20 @@
 
 /* Separate tilted introduction badge. Reserve its rotated footprint. */
 .top .intro-badge-slot{flex:0 0 116px;width:116px;height:116px;display:grid;place-items:center}
-.top .intro-badge{position:relative;display:grid;place-items:center;width:122px;min-height:48px;padding:7px 10px;border:2px solid #fff5bd;border-radius:16px;background:linear-gradient(135deg,#ffec88,#ffd663);color:#174e4c;box-shadow:0 5px 0 #bd8d27,0 8px 20px #d5ab4a40;transform:rotate(-45deg);animation:intro-badge-pulse 3.8s ease-in-out infinite;cursor:pointer}
+.top .intro-badge{position:relative;display:grid;place-items:center;width:122px;min-height:48px;padding:7px 10px;border:2px solid #fff5bd;border-radius:16px;background:linear-gradient(135deg,#ffec88,#ffd663);color:#174e4c;box-shadow:0 5px 0 #bd8d27,0 8px 20px #d5ab4a40;transform:rotate(-10deg);animation:intro-badge-pulse 3.8s ease-in-out infinite;cursor:pointer}
 .top .intro-badge .brand-intro{display:block!important;font-size:12px!important;line-height:1.45;text-align:center;white-space:nowrap;padding:0!important;max-width:none;font-weight:850}
-.top .intro-badge:hover{background:linear-gradient(135deg,#fff3b1,#ffe17b);color:#174e4c;transform:rotate(-45deg) scale(1.04)}
-.top .intro-badge:active{transform:rotate(-45deg) scale(.97)}
+.top .intro-badge:hover{background:linear-gradient(135deg,#fff3b1,#ffe17b);color:#174e4c;transform:rotate(-10deg) scale(1.04)}
+.top .intro-badge:active{transform:rotate(-10deg) scale(.97)}
 .top .intro-badge:focus-visible{outline:3px solid #127e85;outline-offset:6px}
 @keyframes intro-badge-pulse{0%,100%{box-shadow:0 5px 0 #bd8d27,0 8px 20px #d5ab4a40}50%{box-shadow:0 5px 0 #bd8d27,0 0 24px #ffe383c9,0 0 0 5px #ffe88f30}}
 @media(max-width:660px){.top .intro-badge-slot{flex-basis:86px;width:86px;height:86px}.top .intro-badge{width:88px;min-height:39px;padding:5px 6px;border-radius:12px}.top .intro-badge .brand-intro{font-size:9px!important}.home-scene .top .brand strong{font-size:clamp(13px,3.9vw,16px)}.home-scene .top .brand-copy{gap:0}.home-scene .top .top-actions{gap:4px}}
 @media(prefers-reduced-motion:reduce){.top .intro-badge{animation:none}}
+
+/* Keep the title prominent; float the lightly tilted badge across its upper edge. */
+.home-scene .top{position:relative;min-height:112px;padding-top:26px;padding-bottom:12px;overflow:visible}
+.home-scene .top .intro-badge-slot{position:absolute;left:22px;top:4px;width:122px;height:48px;z-index:3}
+.home-scene .top .brand{padding-top:30px}
+.home-scene .top .brand strong{font-size:clamp(30px,3.8vw,44px);line-height:1.25}
+.home-scene .top .brand-shine{background-image:linear-gradient(110deg,#08765d 0%,#007e91 25%,#365ba5 39%,#b47b09 47%,#ffe5a0 51%,#087b8b 61%,#08765d 100%);color:transparent;background-clip:text;-webkit-background-clip:text;-webkit-text-stroke:.25px #155b67;text-shadow:0 2px 0 #ffffff55,0 0 15px #5dccbd45}
+@media(max-width:660px){.home-scene .top{min-height:106px;padding-top:20px;padding-bottom:8px}.home-scene .top .intro-badge-slot{left:12px;top:3px;width:100px;height:39px}.home-scene .top .intro-badge{width:100px}.home-scene .top .brand{padding-top:23px}.home-scene .top .brand strong{font-size:clamp(18px,5.5vw,25px)}.home-scene .top .top-actions{align-self:center}}
+@media(prefers-reduced-motion:reduce){.home-scene .top .brand-shine{background:none;color:#086c75;-webkit-text-stroke:0}}
