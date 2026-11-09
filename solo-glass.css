@@ -1,0 +1,20 @@
+/* Solo only: deep river glass. Reading surfaces stay opaque for contrast. */
+body.solo-active{background:radial-gradient(ellipse at 12% 12%,#13767480,transparent 48%),radial-gradient(ellipse at 88% 65%,#3551a373,transparent 50%),linear-gradient(145deg,#071d2b,#103d49 55%,#132a4b);background-attachment:fixed;min-height:100svh;color:#effaff}
+.solo-active .top{background:linear-gradient(120deg,#ffffff19,#ffffff09);border:1px solid #d4f9ff40;box-shadow:0 12px 40px #00131d50,inset 0 1px #ffffff26;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.solo-active .top .brand-shine{background-image:linear-gradient(110deg,#eafffa 0%,#aaf2e5 35%,#ffe6a2 50%,#b4deff 65%,#eafffa 100%);color:transparent;-webkit-text-stroke:0;text-shadow:0 0 20px #77dfd440}
+.solo-active .top .brand .game-mode-title{color:#a1e9ed}
+.solo-active .solo-category-select{position:relative;background:linear-gradient(135deg,#ffffff17,#ffffff08);border:1px solid #dbf9ff45;box-shadow:0 20px 65px #00101850,inset 0 1px #ffffff26;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:26px;padding:25px}
+.solo-active .solo-category-select h1{color:#f4ffff;font-weight:800;letter-spacing:-.035em}
+.solo-active .solo-category-card{--edge:#7fe8e2;background:linear-gradient(125deg,#ffffff1b,#ffffff08);border:1px solid #d5f7ff42;box-shadow:inset 0 1px #ffffff30,0 8px 20px #001b2a28;border-radius:18px;position:relative;overflow:hidden;transition:border-color .2s,background .2s,transform .2s}
+.solo-active .solo-category-card:before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:3px;border-radius:3px;background:var(--edge);box-shadow:0 0 14px var(--edge)}
+.solo-active .solo-category-card[data-category="지명"]{--edge:#d7b3ff}.solo-active .solo-category-card[data-category="자연환경"]{--edge:#7feac2}.solo-active .solo-category-card[data-category="식물"]{--edge:#6edcfa}.solo-active .solo-category-card[data-category="동물"]{--edge:#ffd18d}.solo-active .solo-random-card{--edge:#c7b4ff;background:linear-gradient(110deg,#7b68d142,#337b9a24)}
+.solo-active .solo-category-copy strong{color:#f1fbff}.solo-active .solo-category-copy small{color:#c4dce4}.solo-active .solo-category-arrow,.solo-active .solo-random-icon{color:var(--edge)}
+.solo-active .solo-category-card:hover:not(:disabled){border-color:var(--edge);background:linear-gradient(125deg,#ffffff2a,#ffffff13);transform:translateY(-2px);box-shadow:inset 0 1px #ffffff45,0 12px 24px #00131f40}
+.solo-active .solo-category-card:focus-visible{outline:3px solid #a6f4f2;outline-offset:4px;border-color:#a6f4f2}.solo-active .solo-category-card:disabled{opacity:.65}
+.solo-active .solo-category-select>.secondary{background:#ffffff13;border:1px solid #d6f5ff50;color:#e1f7ff;box-shadow:none}.solo-active .solo-category-select>.secondary:hover{background:#ffffff26;color:white}
+.solo-active .mission-main,.solo-active .coach,.solo-active .summary{background:#f7fcfafa;color:#153c46;border:1px solid #ffffffbd;box-shadow:0 20px 55px #00101840}
+.solo-active .solo-chip-reward{background:radial-gradient(circle at 50% 35%,#31535d,#102c40 80%);border-color:#f4dc86}.solo-active .solo-chip-reward h1{color:#f2ffff}.solo-active .solo-chip-reward>strong{color:#ffe7a2}
+.solo-active .site-footer{background:#ffffff0e;color:#b5d0db;border:1px solid #d6f5ff26;box-shadow:none}.solo-active .site-footer p{color:#b5d0db}
+@supports not (backdrop-filter:blur(1px)){.solo-active .top,.solo-active .solo-category-select{background:#173a4b}.solo-active .solo-category-card{background:#244959}}
+@media(max-width:600px){.solo-active .solo-category-select{padding:20px 13px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.solo-active .solo-category-card{border-radius:16px}}
+@media(prefers-reduced-motion:reduce){.solo-active .solo-category-card{transition:none}.solo-active .solo-category-card:hover:not(:disabled){transform:none}}
