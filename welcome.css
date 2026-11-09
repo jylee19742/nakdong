@@ -47,5 +47,5 @@
 .top .intro-badge:active{transform:rotate(-45deg) scale(.97)}
 .top .intro-badge:focus-visible{outline:3px solid #127e85;outline-offset:6px}
 @keyframes intro-badge-pulse{0%,100%{box-shadow:0 5px 0 #bd8d27,0 8px 20px #d5ab4a40}50%{box-shadow:0 5px 0 #bd8d27,0 0 24px #ffe383c9,0 0 0 5px #ffe88f30}}
-@media(max-width:660px){.top .intro-badge-slot{flex-basis:76px;width:76px;height:86px}.top .intro-badge{width:88px;min-height:39px;padding:5px 6px;border-radius:12px}.top .intro-badge .brand-intro{font-size:9px!important}.home-scene .top .brand strong{font-size:clamp(13px,3.9vw,16px)}.home-scene .top .brand-copy{gap:0}.home-scene .top .top-actions{gap:4px}}
+@media(max-width:660px){.top .intro-badge-slot{flex-basis:86px;width:86px;height:86px}.top .intro-badge{width:88px;min-height:39px;padding:5px 6px;border-radius:12px}.top .intro-badge .brand-intro{font-size:9px!important}.home-scene .top .brand strong{font-size:clamp(13px,3.9vw,16px)}.home-scene .top .brand-copy{gap:0}.home-scene .top .top-actions{gap:4px}}
 @media(prefers-reduced-motion:reduce){.top .intro-badge{animation:none}}
