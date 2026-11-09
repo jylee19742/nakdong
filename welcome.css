@@ -32,3 +32,9 @@
 @keyframes mascot-speaking{0%,100%{transform:translateY(0) rotate(-.6deg)}50%{transform:translateY(-4px) rotate(.8deg)}}@keyframes mascot-voice{from{transform:scaleY(.55)}to{transform:scaleY(1.15)}}
 @media(max-width:660px){.mascot-scene>.welcome-mobile-pair{width:94%;gap:10px}.mascot-talk-wave{right:-4%;gap:3px;height:22px}.mascot-talk-wave i{width:4px}.mascot-talk-wave i:nth-child(2){height:20px}}
 @media(prefers-reduced-motion:reduce){.welcome-stage .mascot-avatar>img,.welcome-stage .mascot-talk-wave i{animation:none!important;transform:none!important}.mascot-avatar>img,.mascot-avatar:before,.mascot-talk-wave{transition:none}}
+
+/* Compact icon labels: pointer hover and keyboard focus, without layout shift. */
+.top-actions [data-tooltip]{position:relative;overflow:visible}
+.top-actions [data-tooltip]::after{content:attr(data-tooltip);position:absolute;top:calc(100% + 8px);right:0;z-index:100;padding:7px 11px;border:1px solid #b8dcd6;border-radius:10px;background:#164c52;color:#fff;font-size:13px;font-weight:700;line-height:1.4;white-space:nowrap;box-shadow:0 4px 12px #163c3226;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s}
+.top-actions [data-tooltip]:hover::after,.top-actions [data-tooltip]:focus-visible::after{opacity:1;visibility:visible}
+@media(prefers-reduced-motion:reduce){.top-actions [data-tooltip]::after{transition:none}}
