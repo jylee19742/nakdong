@@ -5,7 +5,7 @@ let draft={name:'',team:'',size:2,consent:false,avatar:'b1'},linkCode=new URLSea
 try{const a=JSON.parse(sessionStorage.getItem(KEY)||'null');if(a&&/^\d{6}$/.test(a.code)&&a.playerId&&a.token&&(!linkCode||a.code===linkCode))auth=a}catch{}
 if(linkCode)tab='join';
 const rid=()=>crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2);
-const format=ms=>{const t=Math.max(0,Math.floor(ms/1000));return Math.floor(t/60)+'분 '+String(t%60).padStart(2,'0')+'초'},precise=ms=>format(ms)+' '+String(Math.floor(ms%1000/10)).padStart(2,'0');
+const format=ms=>{const t=Math.max(0,Math.floor(ms/1000));return Math.floor(t/60)+'분 '+String(t%60).padStart(2,'0')+'초'},precise=ms=>format(ms).replace('초','.'+String(Math.floor(ms%1000)).padStart(3,'0')+'초');
 const now=()=>clockServer+(performance.now()-clockAt);
 function remember(){try{if(auth)sessionStorage.setItem(KEY,JSON.stringify(auth));else sessionStorage.removeItem(KEY)}catch{}}
 function jsonp(payload){return new Promise((resolve,reject)=>{const cb='nakdongCR_'+Date.now()+'_'+(++serial),s=document.createElement('script');let expired=false;const clean=()=>{clearTimeout(timer);s.remove()};const timer=setTimeout(()=>{expired=true;window[cb]=()=>{};clean();reject(Error('응답이 늦어요. 같은 요청으로 다시 연결해 주세요.'))},35000);window[cb]=r=>{clean();delete window[cb];resolve(r)};s.onload=()=>{if(expired)delete window[cb]};s.onerror=()=>{clean();delete window[cb];reject(Error('서버에 연결하지 못했어요. 인터넷 연결을 확인해 주세요.'))};s.src=ENDPOINT+'?coopRace=1&callback='+cb+'&payload='+encodeURIComponent(JSON.stringify(payload));document.head.append(s)})}
