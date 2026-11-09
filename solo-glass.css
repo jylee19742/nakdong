@@ -18,3 +18,5 @@ body.solo-active{background:radial-gradient(ellipse at 12% 12%,#13767480,transpa
 @supports not (backdrop-filter:blur(1px)){.solo-active .top,.solo-active .solo-category-select{background:#173a4b}.solo-active .solo-category-card{background:#244959}}
 @media(max-width:600px){.solo-active .solo-category-select{padding:20px 13px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.solo-active .solo-category-card{border-radius:16px}}
 @media(prefers-reduced-motion:reduce){.solo-active .solo-category-card{transition:none}.solo-active .solo-category-card:hover:not(:disabled){transform:none}}
+
+.solo-active .solo-mode-badge{display:inline-block;margin:0 0 15px;padding:8px 15px;border:1px solid #8ee6e3a6;border-radius:10px;background:linear-gradient(120deg,#8ee6e326,#8bc2ff1a);color:#c4ffff;font-size:15px;font-weight:800;letter-spacing:.02em;box-shadow:inset 0 1px #ffffff26,0 4px 12px #001c2726}
