@@ -102,3 +102,10 @@ body[data-section] .battle-ranking .battle-rank-list article{background:#e1f1ee;
 body[data-section] #raceRank .race-rank-tabs button{background:#e0edf4;color:#153c46;border:1px solid #7a9fae}
 body[data-section] #raceRank .race-rank-tabs button[aria-pressed=true]{background:#56417a;color:#fff;border-color:#56417a}
 body[data-section] #raceRank .dialog-head button.plain-close{color:#153c46;opacity:1}
+
+.solo-entry-panel{max-width:620px;margin:24px auto;padding:24px}.solo-entry-panel form{display:grid;gap:10px}.solo-entry-panel label{color:#eaf5ff;font-weight:700;margin-top:10px}.solo-entry-panel input{width:100%;box-sizing:border-box;padding:12px;font:inherit;min-height:46px}.solo-entry-panel p{color:#caddea;font-size:14px;line-height:1.7}.reflection-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;box-sizing:border-box;text-decoration:none;font-weight:800;margin:8px;border-radius:12px}
+
+body[data-section] .battle-ranking .battle-rank-list article[data-place="1"],body[data-section] .race-rank-table tr[data-place="1"] td{background:#fff0bc}
+body[data-section] .battle-ranking .battle-rank-list article[data-place="2"],body[data-section] .race-rank-table tr[data-place="2"] td{background:#dce9f6}
+body[data-section] .battle-ranking .battle-rank-list article[data-place="3"],body[data-section] .race-rank-table tr[data-place="3"] td{background:#f3ddcb}
+body[data-section] .battle-ranking .battle-rank-list article{padding-top:8px;padding-bottom:8px}
