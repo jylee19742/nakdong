@@ -20,3 +20,6 @@ body.solo-active{background:radial-gradient(ellipse at 12% 12%,#13767480,transpa
 @media(prefers-reduced-motion:reduce){.solo-active .solo-category-card{transition:none}.solo-active .solo-category-card:hover:not(:disabled){transform:none}}
 
 .solo-active .solo-mode-badge{display:inline-block;margin:0 0 15px;padding:8px 15px;border:1px solid #8ee6e3a6;border-radius:10px;background:linear-gradient(120deg,#8ee6e326,#8bc2ff1a);color:#c4ffff;font-size:15px;font-weight:800;letter-spacing:.02em;box-shadow:inset 0 1px #ffffff26,0 4px 12px #001c2726}
+
+/* Light reading panels need their own ink; the shared dark theme uses white headings. */
+body.solo-active :is(.mission-main,.coach,.summary,.checkpoint,.feedback:not(.solo-chip-reward)){color:#153c46}body.solo-active :is(.mission-main,.coach,.summary,.checkpoint,.feedback:not(.solo-chip-reward)) :is(h1,h2,h3){color:#153c46;text-shadow:none}body.solo-active :is(.mission-main,.coach,.summary,.checkpoint,.feedback:not(.solo-chip-reward)) :is(p,small,.small-label,.mission-note,.summary-note,.pledge-note){color:#345b68}body.solo-active .coach :is(strong,.coach-name){color:#153c46}body.solo-active .summary-numbers :is(strong,b){color:#176b60}
