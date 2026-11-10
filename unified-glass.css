@@ -64,3 +64,37 @@ body[data-section="help"] main section .help-keyword{color:#ffdc83;font-weight:8
 body[data-section] :is(.mission-main,.coach,.summary,.checkpoint,.feedback:not(.solo-chip-reward),.coop-question,.coop-lesson,.battle-question,.battle-result,.race-result,.battle-review,.answer-notice,.race-hint,.rank-note,.race-hud,.battle-rules,.shared-board,.result-participation article,.battle-results article){color:#153c46}body[data-section] :is(.mission-main,.coach,.summary,.checkpoint,.feedback:not(.solo-chip-reward),.coop-question,.coop-lesson,.battle-question,.battle-result,.race-result,.battle-review,.answer-notice,.race-hint,.rank-note,.race-hud,.battle-rules,.shared-board,.result-participation article,.battle-results article) :is(h1,h2,h3,.question-copy){color:#153c46;text-shadow:none}body[data-section] :is(.mission-main,.coach,.summary,.checkpoint,.feedback:not(.solo-chip-reward),.coop-question,.coop-lesson,.battle-question,.battle-result,.race-result,.battle-review,.answer-notice,.race-hint,.rank-note,.race-hud,.battle-rules,.shared-board,.result-participation article,.battle-results article) :is(p,small,.small-label,.time-note,.summary-note,.pledge-note){color:#345b68}body[data-section] :is(.choice,.learning-card,.discovery-card,.summary-numbers article){color:#153c46}body[data-section] :is(.choice,.learning-card,.discovery-card,.summary-numbers article) :is(h2,h3,strong){color:#153c46}body[data-section] .race-hint strong{color:#805100}body[data-section] .battle-question .bonus-pulse{color:#674000}body[data-section] .battle-question .bonus-pulse strong{color:#674000}body[data-section] dialog:not(.ranking-viewer):not(.explore-drawer){color:#153c46}body[data-section] dialog:not(.ranking-viewer):not(.explore-drawer) .dialog-head :is(h2,button){color:#153c46}
 
 body[data-section] .battle-last{color:#153c46}body[data-section] .battle-last.correct{color:#155448}body[data-section] .battle-last.wrong{color:#75401f}body[data-section] :is(.coop-question,.race-result) .phase-tag{color:#594215}body[data-section] .race-hud progress{background:#c9dade;border-radius:10px}body[data-section] .race-hud progress::-webkit-progress-bar{background:#c9dade;border-radius:10px}body[data-section] .race-hud progress::-webkit-progress-value{background:#087b71;border-radius:10px}body[data-section] .race-hud progress::-moz-progress-bar{background:#087b71;border-radius:10px}
+
+/* Invitation is a light reading panel even inside the dark lobby. */
+body[data-section] .room-lobby .room-invite{background:#f1f7fb;color:#153c46}
+body[data-section] .room-invite :is(h2,label,strong){color:#153c46}
+body[data-section] .room-lobby .room-invite :is(p,small,figcaption){color:#345b68}
+body[data-section] .room-invite .room-invite-url{color:#075f89}
+body[data-section] .room-lobby .room-invite button:not(.primary){background:#d9eef5;color:#153c46;border-color:#7ba5b5}
+body[data-section] .room-lobby .rank-note{color:#345b68}
+.map-owner-groups{display:grid;gap:14px;margin-top:18px}
+.map-owner-row{min-width:0;padding:16px;border:1px solid #a9cbd4;border-left:4px solid var(--owner,#087b71);border-radius:16px;background:#f5fbfc}
+body[data-section] .map-owner-row h3{margin:0 0 12px;color:#153c46;font-size:18px;overflow-wrap:anywhere}
+.map-owner-row h3 span{font-size:14px;font-weight:500}
+.map-owner-chips{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+.map-owner-chips button{display:flex;flex-direction:column;align-items:center;gap:5px;width:112px;min-height:44px;padding:8px;border:1px solid #bad6df;background:#fff;border-radius:12px;color:#153c46;font:inherit;font-size:13px;line-height:1.4}
+.map-owner-chips .chip-svg{width:88px;max-width:100%;height:auto}
+.map-owner-chips button span{overflow-wrap:anywhere}
+.map-owner-chips button:hover{background:#e2f4f7;border-color:#36788d}
+body[data-section] .map-owner-empty{margin:4px 0;color:#345b68;font-size:14px}
+@media(max-width:600px){.map-owner-row{padding:12px}.map-owner-chips{gap:8px}.map-owner-chips button{width:calc((100% - 16px)/3);font-size:12px;padding:6px}.map-owner-row h3{font-size:16px}}
+
+body[data-section] .ranking-viewer .dialog-head{background:#203d50;border-bottom:1px solid #cdeeff42}
+body[data-section] .ranking-viewer .dialog-head :is(h2,button){color:#effaff}
+body[data-section] .room-lobby .room-invite :is(h2,label,strong){color:#153c46}
+
+body[data-section] .room-lobby .ready-prompt{padding:14px 18px;margin:18px 0 10px;border:2px solid #ffd76c;border-radius:14px;background:#382f50;color:#fff2be;font-size:16px;line-height:1.6;text-align:center}
+body[data-section] .room-lobby .ready-prompt strong{color:#ffe078}
+body[data-section="ranks"]>header a{background:#214354;color:#edfaff;border:1px solid #8bb8c7}
+/* Embedded battle leaderboard and expanded answer history remain light. */
+body[data-section] :is(.battle-ranking,.battle-history,.battle-history .battle-review){color:#153c46;background:#f1f7fb}
+body[data-section] :is(.battle-ranking,.battle-history) :is(h2,h3,strong,b,span,summary){color:#153c46;text-shadow:none}
+body[data-section] :is(.battle-ranking,.battle-history) :is(p,small){color:#345b68}
+body[data-section] .battle-ranking .rank-size-tabs button{background:#e0edf4;color:#153c46;border-color:#7a9fae}
+body[data-section] .battle-ranking .rank-size-tabs button[aria-pressed=true]{background:#285267;color:#fff;border-color:#285267}
+body[data-section] .battle-ranking .battle-rank-list article{background:#e1f1ee;color:#153c46}

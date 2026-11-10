@@ -6,3 +6,17 @@
 .ranking-cards .ranking-coop-row{grid-template-columns:36px minmax(0,1fr) auto;gap:10px}
 .rank-members{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.rank-member{display:inline-flex;align-items:center;gap:7px;min-width:0}.ranking-cards .rank-member strong{display:inline;font-size:15px}.rank-member em{font-style:normal;font-weight:800;color:#0b7662;white-space:nowrap}.rank-separator{color:#72988f}.ranking-cards .rank-members .rank-avatar{width:38px;height:38px}.ranking-cards .rank-avatar-unknown{background:none;display:grid;place-items:center;border-radius:50%;background-color:#e0f1e9;color:#4d8478}.ranking-cards .rank-team-time{grid-column:auto;font-size:17px}
 @media(max-width:600px){.ranking-cards .ranking-coop-row{grid-template-columns:26px minmax(0,1fr);padding:10px 8px;gap:7px}.ranking-cards .ranking-coop-row>.rank-team-time{grid-column:2;font-size:17px}.rank-members{gap:5px}.rank-member{gap:4px}.ranking-cards .rank-member strong{font-size:13px}.ranking-cards .rank-members .rank-avatar{width:32px;height:32px}.rank-member em{font-size:13px}}
+
+.ranking-coop-table{width:100%;border-collapse:separate;border-spacing:0 8px;table-layout:fixed;color:#153c46}
+.ranking-coop-table th{color:#d7edf5;text-align:left;font-size:14px;padding:4px 8px}
+.ranking-coop-table th:first-child{width:48px}.ranking-coop-table th:last-child{width:132px}
+.ranking-coop-table td{background:#f1fafc;padding:12px 8px;border-top:1px solid #b8d5dd;border-bottom:1px solid #b8d5dd;vertical-align:top}
+.ranking-coop-table td:first-child{border-left:1px solid #b8d5dd;border-radius:12px 0 0 12px;white-space:nowrap;font-weight:800;color:#226b5c}
+.ranking-coop-table td:last-child{border-right:1px solid #b8d5dd;border-radius:0 12px 12px 0;font-weight:800;color:#116b59;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:15px}
+.ranking-coop-table .rank-members{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.ranking-coop-table .rank-member{display:flex;gap:6px;flex-wrap:wrap;font-size:14px}
+.ranking-coop-table .rank-member strong{overflow-wrap:anywhere;color:#153c46}
+.ranking-coop-table .rank-avatar{display:block;width:32px;height:32px;flex:0 0 32px;background-image:url('explorer-avatars.webp');background-size:400% 200%;background-position:var(--rank-x) var(--rank-y);background-repeat:no-repeat}
+.ranking-coop-table .rank-member em{font-size:13px}
+@media(max-width:600px){.ranking-coop-table th:first-child{width:34px}.ranking-coop-table th:last-child{width:100px}.ranking-coop-table td{padding:10px 5px}.ranking-coop-table td:last-child{font-size:12px}.ranking-coop-table .rank-member{font-size:13px}.ranking-coop-table .rank-avatar{width:26px;height:26px;flex-basis:26px}}
+.ranking-coop-table th{white-space:nowrap}
