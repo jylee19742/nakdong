@@ -98,3 +98,7 @@ body[data-section] :is(.battle-ranking,.battle-history) :is(p,small){color:#345b
 body[data-section] .battle-ranking .rank-size-tabs button{background:#e0edf4;color:#153c46;border-color:#7a9fae}
 body[data-section] .battle-ranking .rank-size-tabs button[aria-pressed=true]{background:#285267;color:#fff;border-color:#285267}
 body[data-section] .battle-ranking .battle-rank-list article{background:#e1f1ee;color:#153c46}
+/* Light in-game co-op ranking dialog needs dark tab labels. */
+body[data-section] #raceRank .race-rank-tabs button{background:#e0edf4;color:#153c46;border:1px solid #7a9fae}
+body[data-section] #raceRank .race-rank-tabs button[aria-pressed=true]{background:#56417a;color:#fff;border-color:#56417a}
+body[data-section] #raceRank .dialog-head button.plain-close{color:#153c46;opacity:1}
