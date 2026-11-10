@@ -18,7 +18,7 @@ async function send(action,data={},retry=false){const read=action==='poll';if(re
  try{const r=await request(payload);if(read&&(!auth||payload.playerId!==auth.playerId))return;if(!r.ok){lastRequest=null;throw Error(r.error||'다시 연결해 주세요.')}error='';if(r.left){reset();status('방에서 나왔어요.');if(homeDestination)location.assign(homeDestination);return}
   if(r.auth){auth={code:r.room.code,playerId:r.auth.id,token:r.auth.token};remember();history.replaceState(null,'',location.pathname+'?room='+auth.code)}
   if(r.room&&(!room||r.room.revision>room.revision||r.room.revision===room.revision&&r.room.serverNow>=room.serverNow)){
-   const previous=room;room=r.room;clockServer=room.serverNow;clockAt=performance.now();render();if(room.status==='finished'&&previous?.status!=='finished')celebrate();
+   const previous=room;room=r.room;window.RiverParticipation?.capture('coop',room);clockServer=room.serverNow;clockAt=performance.now();render();if(room.status==='finished'&&previous?.status!=='finished')celebrate();
   }if(!read)lastRequest=null;if(!busy||!read)status();
  }catch(e){error=e.message;status(error,true);if(!room)render()}finally{if(read)polling=false;else busy=false;sync();schedule()}}
 function sceneKey(){return room?room.status+':'+(room.my.task?.id||room.my.feedback?.at||'waiting'):''}
