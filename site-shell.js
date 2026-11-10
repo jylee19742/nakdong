@@ -14,6 +14,11 @@ document.addEventListener('click',e=>{if(e.target.closest('[data-open-menu]')){o
 document.addEventListener('pointerdown',e=>{if(drawer.open&&!drawer.contains(e.target)&&!e.target.closest('[data-open-menu]'))close(false)});
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.open){e.preventDefault();close()}});
+// Shared unobtrusive close controls, including dialogs rendered after page load.
+const closeGlyph='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+function cleanCloseControls(root){const list=[];if(root.matches?.('button'))list.push(root);root.querySelectorAll?.('button').forEach(b=>list.push(b));for(const b of list){if(b.classList.contains('plain-close'))continue;const text=b.textContent.trim(),isClose=b.matches('[data-close-drawer],[data-close-help]')||(b.closest('dialog')&&/^(닫기\s*[×✕xX]?|[×✕xX])$/.test(text));if(!isClose)continue;const label=b.getAttribute('aria-label');if(!label||/^[×✕xX]$/.test(label))b.setAttribute('aria-label','닫기');b.classList.add('plain-close');b.innerHTML=closeGlyph;}}
+cleanCloseControls(document);
+new MutationObserver(records=>{for(const r of records)for(const n of r.addedNodes)if(n.nodeType===1)cleanCloseControls(n)}).observe(document.body,{childList:true,subtree:true});
 window.RiverNavigation={open};
 try{screen.orientation?.unlock?.()}catch{}
 })();
