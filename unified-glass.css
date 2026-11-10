@@ -40,3 +40,16 @@ body[data-section="learn"] .learn-chip{background:transparent}
 body[data-section="learn"] .learn-chip[data-acrylic]{border-color:#a3e4df99;background:linear-gradient(140deg,#b8eee824,#56b8b814 55%,#bce4ef22);box-shadow:inset 0 1px 2px #d8fffa50,1px 2px 0 #3a777c,2px 4px 0 #24515d,0 7px 12px #001c283d}
 @supports not (backdrop-filter:blur(1px)){body[data-section="learn"] .learn-card{background:#153e49}}
 @media(max-width:660px){body[data-section="learn"] .learn-card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}}
+
+/* Help page uses its actual data-section hook, including nested mode cards. */
+body[data-section="help"]{--accent:#d2b7ff;--accent-rgb:169,123,239;--deep:#292042;--wash:#67468e}
+body[data-section="help"] main>header{padding:12px 0;color:#f5efff}
+body[data-section="help"] h1{color:#f5efff;line-height:1.4}
+body[data-section="help"] main section{background:linear-gradient(135deg,#d0b5ff19,#ffffff08);border:1px solid #d3baff50;border-radius:22px;box-shadow:inset 0 1px #f1e5ff26,0 14px 32px #100a2538;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#eee7fa}
+body[data-section="help"] main section h2{color:#f7f0ff}
+body[data-section="help"] main section p,body[data-section="help"] main section li{color:#d9cfe9}
+body[data-section="help"] main a{display:inline-block;padding:10px 14px;min-height:44px;box-sizing:border-box;border:1px solid #cfb2ff88;border-radius:12px;background:linear-gradient(120deg,#b58ae936,#9778d825);color:#f5eaff;text-decoration:none;font-weight:750}
+body[data-section="help"] main a:hover{background:#b58ae95c;color:#fff;border-color:#dec9ff}
+body[data-section="help"] main a:focus-visible{outline:3px solid #d9bbff;outline-offset:4px}
+@supports not (backdrop-filter:blur(1px)){body[data-section="help"] main section{background:#302747}}
+@media(max-width:660px){body[data-section="help"] main section{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}body[data-section="help"] main>header{align-items:flex-start}body[data-section="help"] main>header a{white-space:nowrap}}
