@@ -53,3 +53,5 @@ body[data-section="help"] main a:hover{background:#b58ae95c;color:#fff;border-co
 body[data-section="help"] main a:focus-visible{outline:3px solid #d9bbff;outline-offset:4px}
 @supports not (backdrop-filter:blur(1px)){body[data-section="help"] main section{background:#302747}}
 @media(max-width:660px){body[data-section="help"] main section{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}body[data-section="help"] main>header{align-items:flex-start}body[data-section="help"] main>header a{white-space:nowrap}}
+
+body[data-section="help"] main section .coop-time-highlight{color:#ffdc83;font-weight:850;text-decoration:underline;text-decoration-color:#ffdc8370;text-underline-offset:4px}
