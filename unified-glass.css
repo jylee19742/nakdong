@@ -30,3 +30,13 @@ body[data-section] :is(.ranking-mode-tabs button,.ranking-size-tabs button)[aria
 body[data-section] .drawer-trigger,body[data-section] .dami-help{color:#e6fbff}body[data-section] .drawer-head button{background:#ffffff15;color:#e6fbff;border-color:#d2f4ff44}
 body[data-section] .learn-welcome{padding:20px 24px}.learn-page .learn-welcome h1{margin:0}
 body[data-section] .learn-game-links a[href*="mode=solo"]{background:#1d5085;color:#e9f7ff;border-color:#8ccaff}body[data-section] .learn-game-links a[href^="coop"]{background:#5c4084;color:#f2eaff;border-color:#ceb4ff}body[data-section] .learn-game-links a[href^="battle"]{background:#813f50;color:#fff0ea;border-color:#ffb29e}
+
+/* Learning photo cards share the river-glass surface; original photos stay untouched. */
+body[data-section="learn"] .learn-card{background:linear-gradient(135deg,#7ee7d51a,#ffffff08 55%,#55adc612);border:1px solid #8ddfd35c;box-shadow:inset 0 1px 0 #e0fff32e,0 12px 28px #001d2940;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#f0fffc}
+body[data-section="learn"] .learn-card h3{color:#f0fffc;text-shadow:0 1px 4px #001f2833}
+body[data-section="learn"] .learn-card p{color:#c8e3e6}
+body[data-section="learn"] .learn-card-number{color:#a7d9d4}
+body[data-section="learn"] .learn-chip{background:transparent}
+body[data-section="learn"] .learn-chip[data-acrylic]{border-color:#a3e4df99;background:linear-gradient(140deg,#b8eee824,#56b8b814 55%,#bce4ef22);box-shadow:inset 0 1px 2px #d8fffa50,1px 2px 0 #3a777c,2px 4px 0 #24515d,0 7px 12px #001c283d}
+@supports not (backdrop-filter:blur(1px)){body[data-section="learn"] .learn-card{background:#153e49}}
+@media(max-width:660px){body[data-section="learn"] .learn-card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}}
