@@ -109,3 +109,7 @@ body[data-section] .battle-ranking .battle-rank-list article[data-place="1"],bod
 body[data-section] .battle-ranking .battle-rank-list article[data-place="2"],body[data-section] .race-rank-table tr[data-place="2"] td{background:#dce9f6}
 body[data-section] .battle-ranking .battle-rank-list article[data-place="3"],body[data-section] .race-rank-table tr[data-place="3"] td{background:#f3ddcb}
 body[data-section] .battle-ranking .battle-rank-list article{padding-top:8px;padding-bottom:8px}
+
+.ranking-rule-tabs,.rank-version-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 8px}.rank-version-tabs button{min-height:44px;flex:1;font:inherit;font-weight:750;padding:10px;border-radius:12px}
+body[data-section] .battle-ranking .rank-version-tabs button{background:#e0edf4;color:#153c46;border:1px solid #7a9fae}
+body[data-section] .battle-ranking .rank-version-tabs button[aria-pressed=true]{background:#285267;color:white;border-color:#285267}

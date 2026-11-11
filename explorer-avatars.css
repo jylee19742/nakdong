@@ -3,3 +3,5 @@
 .coop-map-members{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}.coop-map-members>span{display:flex;align-items:center;gap:6px}
 
 .avatar-picker .explorer-avatar{width:min(60px,100%);height:auto;aspect-ratio:1}
+
+img.explorer-avatar-extra{background:none;object-fit:contain}.avatar-picker button{min-height:44px}.avatar-picker small{text-align:center;line-height:1.3}
