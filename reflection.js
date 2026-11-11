@@ -16,16 +16,17 @@ function download(blob,extension){const url=URL.createObjectURL(blob),a=document
 $('downloadCertificate').onclick=async()=>{const c=await certificateCanvas();if(c)c.toBlob(blob=>{if(blob)download(blob,'png')},'image/png')};
 $('downloadPdf').onclick=async()=>{const c=await certificateCanvas();if(!c)return;const raw=atob(c.toDataURL('image/jpeg',.95).split(',')[1]),bytes=Uint8Array.from(raw,ch=>ch.charCodeAt(0));download(new Blob([CertificatePdf.fromJpeg(bytes,c.width,c.height)],{type:'application/pdf'}),'pdf')};
 let pendingMail=null;
-$('sendCertificate').onclick=()=>{
+$('sendCertificate').onclick=async()=>{
  if(!certificate||pendingMail)return;
  const email=$('certificateEmail').value.trim();
  if(!$('certificateEmail').checkValidity()||!email){$('emailStatus').textContent='받는 이메일 주소를 정확히 입력해 주세요.';$('certificateEmail').focus();return}
  if(!$('emailConsent').checked){$('emailStatus').textContent='이메일 발송을 위한 정보 전송 동의를 확인해 주세요.';return}
  if(!confirm(email+' 주소로 '+certificate.name+' 학생의 PDF 인증서를 보낼까요?'))return;
+ const button=$('sendCertificate');button.disabled=true;pendingMail='preparing';$('emailStatus').textContent='인증서 PDF를 준비하고 있어요…';let jpegBase64;try{const c=await certificateCanvas();jpegBase64=c.toDataURL('image/jpeg',.90).split(',')[1];if(jpegBase64.length>5600000)throw Error('PDF 파일이 너무 커요. 내려받기를 이용해 주세요.');}catch(err){pendingMail=null;button.disabled=false;$('emailStatus').textContent=err.message||'PDF를 준비하지 못했어요.';return}
  const requestId=crypto.randomUUID(),frame=document.createElement('iframe'),form=document.createElement('form');frame.name='certificateMail_'+Date.now();frame.hidden=true;form.hidden=true;form.method='POST';form.action=ENDPOINT;form.target=frame.name;
- const payload={...certificate,email,consented:true,requestId,evidence:RiverParticipation.eligibility()};
+ const payload={...certificate,jpegBase64,email,consented:true,requestId,evidence:RiverParticipation.eligibility()};
  for(const [name,value] of Object.entries({certificateMail:'1',payload:JSON.stringify(payload)})){const input=document.createElement('input');input.name=name;input.value=value;form.append(input)}
- const button=$('sendCertificate');button.disabled=true;$('emailStatus').textContent='PDF를 만들어 발송하고 있어요. 잠시 기다려 주세요.';
+ $('emailStatus').textContent='PDF를 발송하고 있어요. 잠시 기다려 주세요.';
  const cleanup=()=>{clearTimeout(timer);window.removeEventListener('message',receive);form.remove();frame.remove();pendingMail=null;button.disabled=false};
  const receive=event=>{let u;try{u=new URL(event.origin)}catch{return}if(u.protocol!=='https:'||!(u.hostname==='script.google.com'||u.hostname.endsWith('.googleusercontent.com')))return;const r=event.data;if(r?.type!=='nakdong-certificate-mail'||r.requestId!==requestId)return;cleanup();$('emailStatus').textContent=r.ok?'메일을 발송했어요. 받은편지함과 스팸함을 확인해 주세요.':r.error||'발송하지 못했어요. PDF 내려받기를 이용해 주세요.'};
  const timer=setTimeout(()=>{cleanup();$('emailStatus').textContent='발송 결과 확인이 늦어지고 있어요. 받은편지함을 먼저 확인해 주세요. PDF 내려받기도 이용할 수 있어요.'},90000);pendingMail=requestId;window.addEventListener('message',receive);document.body.append(frame,form);form.submit();
